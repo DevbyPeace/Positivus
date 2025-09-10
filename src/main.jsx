@@ -11,6 +11,8 @@ import Contact from "./components/Contact";
 import CaseStudies from "./components/Casestudies";
 import WorkingProcess from "./components/WorkingProcess";
 import Team from "./components/Team";
+import Testimonials from "./components/Testimonials";
+import FormComponent from "./components/FormComponent";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -24,6 +26,8 @@ createRoot(document.getElementById("root")).render(
         <CaseStudies />
         <WorkingProcess/>
         <Team/>
+        <Testimonials/>
+        <FormComponent/>
       </div>
     </>
   </StrictMode>

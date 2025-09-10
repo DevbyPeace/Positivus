@@ -123,7 +123,10 @@ function Services() {
         </div>
 
         {/* Card 6 */}
-        <div className="rounded-2xl flex justify-between items-center p-6 md:p-12 lg:p-18 bg-[#191A23] shadow-[0px_7px_4px_0px_rgba(0,0,0,0.75)]">
+        <div
+          className="rounded-2xl flex justify-between items-center p-6 md:p-12 lg:p-18 bg-[#191A23] shadow-[0px_7px_4px_0px_rgba(0,0,0,0.75)]  transform transition-transform duration-300 
+                hover:-translate-y-2 hover:shadow-lg"
+        >
           <div className="flex flex-col justify-between gap-6 sm:gap-12 md:gap-20 flex-1 min-w-0">
             <div className="flex flex-col">
               <h1 className="bg-[#B9FF66] rounded-xl p-1 font-bold w-fit text-lg sm:text-xl md:text-3xl">
