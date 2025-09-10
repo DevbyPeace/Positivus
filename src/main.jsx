@@ -8,7 +8,7 @@ import Hero from "./components/Hero";
 import Sponsors from "./components/Sponsors";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import CaseStudies from "./components/Casestudies";
+import CaseStudies from "./components/CaseStudies";
 import WorkingProcess from "./components/WorkingProcess";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
