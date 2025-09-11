@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 
 //Card Images
-import card1 from "../assets/card1.svg";
-import card2 from "../assets/card2.svg";
-import card3 from "../assets/card3.svg";
-import card4 from "../assets/card4.svg";
-import card5 from "../assets/card5.svg";
-import card6 from "../assets/card6.svg";
+import card1 from "../assets/cards/card1.svg";
+import card2 from "../assets/cards/card2.svg";
+import card3 from "../assets/cards/card3.svg";
+import card4 from "../assets/cards/card4.svg";
+import card5 from "../assets/cards/card5.svg";
+import card6 from "../assets/cards/card6.svg";
 
 function Services() {
   return (
@@ -15,7 +15,7 @@ function Services() {
         <h1 className="bg-[#B9FF66] font-bold text-2xl rounded-md p-2">
           Services
         </h1>
-        <p className="w-full ">
+        <p className="text-center lg:text-start w-full ">
           At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include:
         </p>

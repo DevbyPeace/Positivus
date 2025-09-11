@@ -1,5 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import ChatBubble from "./ChatBubble";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Chatter from "./Chatter";
 
 const testimonialsList = [
@@ -35,41 +38,9 @@ const testimonialsList = [
   },
 ];
 
-// function Testimonials() {
-//   return (
-//     <div className="mt-20 border-black border-8">
-//       <Swiper
-//         spaceBetween={30} // gap between slides
-//         slidesPerView={"auto"} // slides size themselves
-//         centeredSlides={true} // active slide is centered
-//         loop={true}
-//         onSlideChange={() => console.log("slide change")}
-//         onSwiper={(swiper) => console.log(swiper)}
-//         pagination
-//         className="bg-[#191A23]"
-//       >
-//         {testimonialsList.map((person, index) => {
-//           return (
-//             <SwiperSlide>
-//               <Chatter
-//                 key={index}
-//                 content={person.content}
-//                 name={person.name}
-//                 position={person.position}
-//               />
-//             </SwiperSlide>
-//           );
-//         })}
-//       </Swiper>
-//     </div>
-//   );
-// }
-
-// export default Testimonials;
-
 function Testimonials() {
   return (
-    <div className="border-black border-2">
+    <div>
       <div className="w-full flex flex-col justify-center p-4 pl-0 items-center gap-5 lg:gap-9 lg:w-[70%] lg:justify-between lg:min-w-[1000px] lg:flex-row lg:pl-0">
         <h1 className="bg-[#B9FF66] font-bold text-2xl rounded-md p-2 px-4 text-nowrap">
           Testimonials
@@ -79,21 +50,27 @@ function Testimonials() {
           about Our Digital Marketing Services
         </p>
       </div>
-
-      <div className="mt-20 border-black border-8 pt-30 bg-[#191A23]">
+      <div className="mt-5 rounded-2xl pt-30 pb-35 relative bg-[#191a23]">
         <Swiper
-          spaceBetween={50} // gap between slides
-          slidesPerView={"auto"} // slides size themselves
-          centeredSlides={true} // active slide is centered
-          loop={true} // optional: infinite loop
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-          className="bg-[#191A23]"
+          modules={[Navigation, Pagination]}
+          spaceBetween={50}
+          slidesPerView={"auto"}
+          centeredSlides={true}
+          loop={true}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{
+            el: ".swiper-pagination",
+            clickable: true,
+          }}
+          className="bg-[#191A23] rounded-2xl"
         >
           {testimonialsList.map((person, index) => (
             <SwiperSlide
               key={index}
-              className="!w-[70%] md:!w-[50%] lg:!w-[40%]" // control width
+              className="!w-[70%] md:!w-[50%] lg:!w-[40%]"
             >
               <Chatter
                 content={person.content}
@@ -103,6 +80,13 @@ function Testimonials() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* custom nav + pagination */}
+        <div className=" w-[50%] absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-10">
+          <button className="swiper-button-prev scale-70 text-[#b9ff66]"></button>
+          <div className="swiper-pagination !static !w-auto m-auto"></div>
+          <button className="swiper-button-next scale-70"></button>
+        </div>
       </div>
     </div>
   );

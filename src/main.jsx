@@ -13,6 +13,7 @@ import WorkingProcess from "./components/WorkingProcess";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import FormComponent from "./components/FormComponent";
+import Footer from "./components/Footer";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -24,10 +25,13 @@ createRoot(document.getElementById("root")).render(
         <Services />
         <Contact />
         <CaseStudies />
-        <WorkingProcess/>
-        <Team/>
-        <Testimonials/>
-        <FormComponent/>
+        <WorkingProcess />
+        <Team />
+        <Testimonials />
+        <FormComponent />
+      </div>
+      <div className="w-[100%] max-w-7xl mx-auto">
+        <Footer />
       </div>
     </>
   </StrictMode>

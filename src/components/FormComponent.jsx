@@ -2,7 +2,7 @@ import contactvector from "../assets/contactvectorlg.svg";
 
 function FormComponent() {
   return (
-    <div>
+    <div className="mt-20">
       <div className="w-full flex flex-col justify-center p-4 pl-0 items-center gap-5 lg:gap-9 lg:w-[70%] lg:justify-between lg:min-w-[1000px] lg:flex-row lg:pl-0">
         <h1 className="bg-[#B9FF66] font-bold text-2xl rounded-md p-2 px-4 text-nowrap">
           Contact Us
@@ -90,7 +90,7 @@ function FormComponent() {
         </form>
 
         <img
-          className="hidden lg:block absolute -right-77 top-0 h-full object-contain object-right overflow-hidden"
+          className="hidden lg:block absolute right-0 top-0 h-full object-contain object-right overflow-hidden"
           src={contactvector}
           alt="Contact vector"
         />

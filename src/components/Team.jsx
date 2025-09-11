@@ -1,7 +1,6 @@
 import linkedin from "../assets/linkedin.svg";
 import { TeamApi } from "./TeamApi";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
+import "swiper/css";
 
 function Team() {
   return (
@@ -15,39 +14,67 @@ function Team() {
           marketing strategies
         </p>
       </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 mb-5 mt-4">
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 pb-5 mt-4">
-        {TeamApi.map((member) => {
-          return (
-            <div
-              className="flex-col border-2 border-black rounded-3xl p-5 
-                shadow-[0px_7px_4px_0px_rgba(0,0,0,0.75)]
-                transform transition-transform duration-300 
-                hover:-translate-y-2 hover:shadow-lg"
-            >
-              {/* image and name */}
-              <div className="flex gap-4 items-end border-b-2 border-b-black pb-4 relative">
-                <img src={member.imageSource} alt="John" />
-                <div className="">
-                  <h1 className="font-bold align-text-bottom text-2xl tracking-tight">
-                    {member.name}
-                  </h1>
-                  <h1 className="">{member.position}</h1>
-                </div>
-                <img
-                  className="absolute right-0 top-0"
-                  src={linkedin}
-                  alt="linkedinLogo"
-                />
+        {/* Mobile: show only 4 */}
+        {TeamApi.slice(0, 4).map((member) => (
+          <div
+            key={member.id}
+            className="block lg:hidden flex-col border-2 border-black rounded-3xl p-5 
+        shadow-[0px_7px_4px_0px_rgba(0,0,0,0.75)]
+        transform transition-transform duration-300 
+        hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div className="flex gap-4 items-end border-b-2 border-b-black pb-4 relative">
+              <img src={member.imageSource} alt={member.name} />
+              <div>
+                <h1 className="font-bold text-2xl tracking-tight">
+                  {member.name}
+                </h1>
+                <h1>{member.position}</h1>
               </div>
-              <div className="py-5">{member.bio}</div>
+              <img
+                className="absolute right-0 top-0"
+                src={linkedin}
+                alt="linkedinLogo"
+              />
             </div>
-          );
-        })}
+            <div className="py-5">{member.bio}</div>
+          </div>
+        ))}
+
+        {/* Large screens: show all */}
+        {TeamApi.map((member) => (
+          <div
+            key={member.id}
+            className="hidden lg:flex flex-col border-2 border-black rounded-3xl p-5 
+        shadow-[0px_7px_4px_0px_rgba(0,0,0,0.75)]
+        transform transition-transform duration-300 
+        hover:-translate-y-2 hover:shadow-lg"
+          >
+            <div className="flex gap-4 items-end border-b-2 border-b-black pb-4 relative">
+              <img src={member.imageSource} alt={member.name} />
+              <div>
+                <h1 className="font-bold text-2xl tracking-tight">
+                  {member.name}
+                </h1>
+                <h1>{member.position}</h1>
+              </div>
+              <img
+                className="absolute right-0 top-0"
+                src={linkedin}
+                alt="linkedinLogo"
+              />
+            </div>
+            <div className="py-5">{member.bio}</div>
+          </div>
+        ))}
       </div>
 
+      <div className=" flex justify-end mb-15 mt-2">
+        <p className="bg-[#191A23] rounded-2xl p-3 text-white">See all team</p>
+      </div>
       {/*///////////////////////////////////////////////// */}
-     
     </section>
   );
 }

@@ -1,5 +1,3 @@
-import BubbleBg from "../assets/Bubblebg.svg";
-
 function Chatter({ content, name, position }) {
   return (
     <div className="w-fit max-w-2xl">

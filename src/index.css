@@ -146,3 +146,29 @@ body {
 
 }
 
+
+
+/* Navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #b9ff66 !important; 
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  background: #b9ff66 !important; 
+  margin: 0 10px !important; 
+}
+
+.swiper-pagination-bullet-active {
+  background: #b9ff66 !important;
+}
+
+
+@media (max-width: 768px) {
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px !important; /* tighter spacing */
+  }
+}
